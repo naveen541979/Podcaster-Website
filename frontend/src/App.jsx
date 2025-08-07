@@ -5,7 +5,7 @@ import AuthLayout from './layout/AuthLayout';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Categories from './pages/Categories';
-import Profile from './pages/profile';
+import Profile from './pages/Profile';
 import axios from 'axios';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
