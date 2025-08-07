@@ -15,7 +15,7 @@ const Header = () => {
     const fetchUserdetails = async () => {
       try {
         const res = await axios.get(
-          'http://localhost:7000/api/v1/users/user-details',
+          `${import.meta.env.BASE_URL}/api/v1/users/user-details`,
           { withCredentials: true }
         );
         setUserdata(res.data.data);
@@ -33,7 +33,7 @@ const Header = () => {
   const LogoutHandler = async () => {
     try {
       await axios.post(
-        'http://localhost:7000/api/v1/users/logout',
+        `${import.meta.env.BASE_URL}/api/v1/users/logout`,
         {},
         { withCredentials: true }
       );

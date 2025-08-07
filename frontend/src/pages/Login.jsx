@@ -30,7 +30,7 @@ const Login = () => {
 
     try {
       const res = await axios.post(
-        'http://localhost:7000/api/v1/users/login',
+        `${import.meta.env.BASE_URL}/api/v1/users/login`,
         Values,
         { withCredentials: true }
       );

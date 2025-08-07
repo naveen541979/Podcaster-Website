@@ -11,7 +11,7 @@ const Mypodcasts = () => {
   useEffect(() => {
     const fetch = async () => {
       try {
-        const res = await axios.get("http://localhost:7000/api/v1/podcast/get-user-podcasts", {
+        const res = await axios.get(`${import.meta.env.BASE_URL}/api/v1/podcast/get-user-podcasts`, {
           withCredentials: true
         });
         setPodcasts(res.data.data);

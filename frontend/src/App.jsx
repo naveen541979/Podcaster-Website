@@ -21,7 +21,7 @@ function App() {
 
   useEffect(() => {
     const fetch = async () => {
-      const res = await axios.get("http://localhost:7000/api/v1/users/check-cookie", {
+      const res = await axios.get(`${import.meta.env.BASE_URL}/api/v1/users/check-cookie`, {
         withCredentials: true,
       });
 

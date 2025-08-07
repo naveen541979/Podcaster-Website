@@ -11,7 +11,7 @@ const CategoriesPage = () => {
     useEffect(() => {
         const fetch = async () => {
         try {
-            const res = await axios.get(`http://localhost:7000/api/v1/podcast/category/${cat}`,{withCredentials:true});
+            const res = await axios.get(`${import.meta.env.BASE_URL}/api/v1/podcast/category/${cat}`,{withCredentials:true});
             setPodcasts(res.data.data);
         } catch (error) {
             console.error("Failed to fetch podcasts", error);

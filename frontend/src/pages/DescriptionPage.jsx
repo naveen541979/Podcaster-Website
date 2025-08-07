@@ -9,7 +9,7 @@ const DescriptionPage = () => {
   useEffect(() => {
     const fetch = async () => {
       try {
-        const res = await axios.get(`http://localhost:7000/api/v1/podcast/get-podcast/${id}`, {
+        const res = await axios.get(`${import.meta.env.BASE_URL}/api/v1/podcast/get-podcast/${id}`, {
           withCredentials: true,
         });
         setPodcast(res.data.data);

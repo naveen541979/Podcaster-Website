@@ -10,8 +10,8 @@ const Podcastcard = ({ items, onDelete }) => {
   const navigate = useNavigate();
   const isLoggedin = useSelector((state) => state.auth.isLoggedIn);
 
-  const frontImage = `http://localhost:7000/public/images/${items.frontImage.split('\\').pop()}`;
-  const audioFile = `http://localhost:7000/public/images/${items.audioFile.split('\\').pop()}`;
+  const frontImage = `${import.meta.env.BASE_URL}/public/images/${items.frontImage.split('\\').pop()}`;
+  const audioFile = `${import.meta.env.BASE_URL}/public/images/${items.audioFile.split('\\').pop()}`;
 
   const handlePlay = (e) => {
     e.preventDefault();
@@ -33,7 +33,7 @@ const Podcastcard = ({ items, onDelete }) => {
     }
 
     try {
-      await axios.delete(`http://localhost:7000/api/v1/podcast/delete-podcast/${items._id}`, {
+      await axios.delete(`${import.meta.env.BASE_URL}/api/v1/podcast/delete-podcast/${items._id}`, {
         withCredentials: true,
       });
 

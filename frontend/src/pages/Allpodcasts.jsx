@@ -8,7 +8,7 @@ const Allpodcasts = () => {
   useEffect(() => {
     const fetch = async () => {
       try {
-        const res = await axios.get("http://localhost:7000/api/v1/podcast/get-podcasts");
+        const res = await axios.get(`${import.meta.env.BASE_URL}/api/v1/podcast/get-podcasts`);
         setPodcasts(res.data.data);
       } catch (error) {
         console.error("Failed to fetch podcasts", error);

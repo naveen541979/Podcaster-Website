@@ -29,7 +29,7 @@ const Signup = () => {
     }
 
     try {
-      const res = await axios.post('http://localhost:7000/api/v1/users/signup', Values);
+      const res = await axios.post(`${import.meta.env.BASE_URL}/api/v1/users/signup`, Values);
       if (res?.data?.success) {
         toast.success(res.data.message || 'Signup successful!');
         setTimeout(() => navigate('/login'), 1500);
