@@ -16,7 +16,7 @@ const Header = () => {
     const fetchUserdetails = async () => {
       try {
         const res = await axios.get(
-          `${baseUrl}/api/v1/users/user-details`,
+          `https://podcaster-website-1.onrender.com/api/v1/users/user-details`,
           { withCredentials: true }
         );
         setUserdata(res.data.data);
@@ -34,7 +34,7 @@ const Header = () => {
   const LogoutHandler = async () => {
     try {
       await axios.post(
-        `${baseUrl}/api/v1/users/logout`,
+        `https://podcaster-website-1.onrender.com/api/v1/users/logout`,
         {},
         { withCredentials: true }
       );

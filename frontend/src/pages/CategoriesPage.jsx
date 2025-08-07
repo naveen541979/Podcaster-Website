@@ -13,7 +13,7 @@ const CategoriesPage = () => {
     useEffect(() => {
         const fetch = async () => {
         try {
-            const res = await axios.get(`${baseUrl}/api/v1/podcast/category/${cat}`,{withCredentials:true});
+            const res = await axios.get(`https://podcaster-website-1.onrender.com/api/v1/podcast/category/${cat}`,{withCredentials:true});
             setPodcasts(res.data.data);
         } catch (error) {
             console.error("Failed to fetch podcasts", error);

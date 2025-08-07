@@ -30,7 +30,7 @@ const Signup = () => {
     }
 
     try {
-      const res = await axios.post(`${baseUrl}/api/v1/users/signup`, Values);
+      const res = await axios.post(`https://podcaster-website-1.onrender.com/api/v1/users/signup`, Values);
       if (res?.data?.success) {
         toast.success(res.data.message || 'Signup successful!');
         setTimeout(() => navigate('/login'), 1500);

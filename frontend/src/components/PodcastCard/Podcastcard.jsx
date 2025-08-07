@@ -12,8 +12,8 @@ const Podcastcard = ({ items, onDelete }) => {
   const baseUrl = import.meta.env.BASE_URL;
 
 
-  const frontImage = `${baseUrl}/public/images/${items.frontImage.split('\\').pop()}`;
-  const audioFile = `${baseUrl}/public/images/${items.audioFile.split('\\').pop()}`;
+  const frontImage = `https://podcaster-website-1.onrender.com/public/images/${items.frontImage.split('\\').pop()}`;
+  const audioFile = `https://podcaster-website-1.onrender.com/public/images/${items.audioFile.split('\\').pop()}`;
 
   const handlePlay = (e) => {
     e.preventDefault();
@@ -35,7 +35,7 @@ const Podcastcard = ({ items, onDelete }) => {
     }
 
     try {
-      await axios.delete(`${baseUrl}/api/v1/podcast/delete-podcast/${items._id}`, {
+      await axios.delete(`https://podcaster-website-1.onrender.com/api/v1/podcast/delete-podcast/${items._id}`, {
         withCredentials: true,
       });
 

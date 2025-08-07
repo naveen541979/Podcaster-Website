@@ -9,7 +9,7 @@ const Allpodcasts = () => {
   useEffect(() => {
     const fetch = async () => {
       try {
-        const res = await axios.get(`${baseUrl}/api/v1/podcast/get-podcasts`);
+        const res = await axios.get(`https://podcaster-website-1.onrender.com/api/v1/podcast/get-podcasts`);
         setPodcasts(res.data.data);
       } catch (error) {
         console.error("Failed to fetch podcasts", error);

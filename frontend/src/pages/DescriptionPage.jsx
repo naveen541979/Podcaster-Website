@@ -10,7 +10,7 @@ const DescriptionPage = () => {
   useEffect(() => {
     const fetch = async () => {
       try {
-        const res = await axios.get(`${baseUrl}/api/v1/podcast/get-podcast/${id}`, {
+        const res = await axios.get(`https://podcaster-website-1.onrender.com/api/v1/podcast/get-podcast/${id}`, {
           withCredentials: true,
         });
         setPodcast(res.data.data);
