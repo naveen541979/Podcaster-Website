@@ -10,12 +10,13 @@ const Header = () => {
   const [errorMsg, setErrorMsg] = useState('');
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const baseUrl = import.meta.env.BASE_URL;
 
   useEffect(() => {
     const fetchUserdetails = async () => {
       try {
         const res = await axios.get(
-          `${import.meta.env.BASE_URL}/api/v1/users/user-details`,
+          `${baseUrl}/api/v1/users/user-details`,
           { withCredentials: true }
         );
         setUserdata(res.data.data);
@@ -33,7 +34,7 @@ const Header = () => {
   const LogoutHandler = async () => {
     try {
       await axios.post(
-        `${import.meta.env.BASE_URL}/api/v1/users/logout`,
+        `${baseUrl}/api/v1/users/logout`,
         {},
         { withCredentials: true }
       );

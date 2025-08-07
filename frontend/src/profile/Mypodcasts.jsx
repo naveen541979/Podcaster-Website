@@ -7,11 +7,13 @@ const Mypodcasts = () => {
   const [podcasts, setPodcasts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [errorMsg, setErrorMsg] = useState("");
+  const baseUrl = import.meta.env.BASE_URL;
+
 
   useEffect(() => {
     const fetch = async () => {
       try {
-        const res = await axios.get(`${import.meta.env.BASE_URL}/api/v1/podcast/get-user-podcasts`, {
+        const res = await axios.get(`${baseUrl}/api/v1/podcast/get-user-podcasts`, {
           withCredentials: true
         });
         setPodcasts(res.data.data);

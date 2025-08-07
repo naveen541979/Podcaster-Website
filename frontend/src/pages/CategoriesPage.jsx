@@ -4,14 +4,16 @@ import { useParams } from 'react-router-dom';
 import Podcastcard from '../components/PodcastCard/Podcastcard';
 
 const CategoriesPage = () => {
+    const baseUrl = import.meta.env.BASE_URL;
 
     const [Podcasts, setPodcasts] = useState([]);
     const {cat}=useParams();
+    
 
     useEffect(() => {
         const fetch = async () => {
         try {
-            const res = await axios.get(`${import.meta.env.BASE_URL}/api/v1/podcast/category/${cat}`,{withCredentials:true});
+            const res = await axios.get(`${baseUrl}/api/v1/podcast/category/${cat}`,{withCredentials:true});
             setPodcasts(res.data.data);
         } catch (error) {
             console.error("Failed to fetch podcasts", error);

@@ -4,11 +4,12 @@ import Podcastcard from '../components/PodcastCard/Podcastcard';
 
 const Allpodcasts = () => {
   const [Podcasts, setPodcasts] = useState([]);
+  const baseUrl = import.meta.env.BASE_URL;
 
   useEffect(() => {
     const fetch = async () => {
       try {
-        const res = await axios.get(`${import.meta.env.BASE_URL}/api/v1/podcast/get-podcasts`);
+        const res = await axios.get(`${baseUrl}/api/v1/podcast/get-podcasts`);
         setPodcasts(res.data.data);
       } catch (error) {
         console.error("Failed to fetch podcasts", error);

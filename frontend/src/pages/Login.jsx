@@ -11,6 +11,7 @@ const Login = () => {
   const isLoggedin = useSelector((state) => state.auth.isLoggedIn);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const baseUrl = import.meta.env.BASE_URL;
 
   const [Values, setValues] = useState({
     email: '',
@@ -30,7 +31,7 @@ const Login = () => {
 
     try {
       const res = await axios.post(
-        `${import.meta.env.BASE_URL}/api/v1/users/login`,
+        `${baseUrl}/api/v1/users/login`,
         Values,
         { withCredentials: true }
       );

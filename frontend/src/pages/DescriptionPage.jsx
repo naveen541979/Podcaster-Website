@@ -5,11 +5,12 @@ import { useParams } from 'react-router-dom';
 const DescriptionPage = () => {
   const [podcast, setPodcast] = useState(null);
   const { id } = useParams();
+  const baseUrl = import.meta.env.BASE_URL;
 
   useEffect(() => {
     const fetch = async () => {
       try {
-        const res = await axios.get(`${import.meta.env.BASE_URL}/api/v1/podcast/get-podcast/${id}`, {
+        const res = await axios.get(`${baseUrl}/api/v1/podcast/get-podcast/${id}`, {
           withCredentials: true,
         });
         setPodcast(res.data.data);

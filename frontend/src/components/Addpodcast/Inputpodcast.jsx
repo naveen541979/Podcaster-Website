@@ -19,10 +19,12 @@ const Inputpodcast = () => {
   const { id } = useParams();  // Get the ID from the URL
   const navigate = useNavigate();
 
+  const baseUrl = import.meta.env.BASE_URL;
+
   useEffect(() => {
     // If there is an ID, fetch the podcast data to prefill the form
     if (id) {
-      axios.get(`${import.meta.env.BASE_URL}/api/v1/podcast/get-podcast/${id}`)
+      axios.get(`${baseUrl}/api/v1/podcast/get-podcast/${id}`)
         .then((response) => {
           const podcast = response.data.podcast;
           if (podcast) {
@@ -91,13 +93,13 @@ const Inputpodcast = () => {
       let res;
       if (id) {
         // Update existing podcast
-        res = await axios.put(`${import.meta.env.BASE_URL}/api/v1/podcast/update-podcast/${id}`, data, {
+        res = await axios.put(`${baseUrl}/api/v1/podcast/update-podcast/${id}`, data, {
           headers: { "Content-Type": "multipart/form-data" },
           withCredentials: true,
         });
       } else {
         // Create new podcast
-        res = await axios.post(`${import.meta.env.BASE_URL}/api/v1/podcast/add-podcast`, data, {
+        res = await axios.post(`${baseUrl}/api/v1/podcast/add-podcast`, data, {
           headers: { "Content-Type": "multipart/form-data" },
           withCredentials: true,
         });

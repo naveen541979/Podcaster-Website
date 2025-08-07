@@ -21,6 +21,7 @@ const Signup = () => {
     const { name, value } = e.target;
     setValues({ ...Values, [name]: value });
   };
+  const baseUrl = import.meta.env.BASE_URL;
 
   const handleSubmit = async () => {
     if (!Values.username || !Values.email || !Values.password) {
@@ -29,7 +30,7 @@ const Signup = () => {
     }
 
     try {
-      const res = await axios.post(`${import.meta.env.BASE_URL}/api/v1/users/signup`, Values);
+      const res = await axios.post(`${baseUrl}/api/v1/users/signup`, Values);
       if (res?.data?.success) {
         toast.success(res.data.message || 'Signup successful!');
         setTimeout(() => navigate('/login'), 1500);
